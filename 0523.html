@@ -11,37 +11,36 @@ aframe.prod.js"></script>
     body { margin: 0; overflow: hidden; }
 
     /* 改良版播放按鈕（圓形 + 播放圖形） */
-#playButton {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 80px;
-  height: 80px;
-  background-color: rgba(255, 255, 255, 0.9); /* 白色背景，略透明 */
-  border-radius: 50%;
-  border: none;
-  cursor: pointer;
-  z-index: 10;
-  display: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+<style>
+  #playButton {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    background-color: white;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+    display: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-#playButton::before {
-  content: '';
-  display: block;
-  width: 0;
-  height: 0;
-  border-left: 30px solid rgba(0, 0, 0, 0.9); /* 播放箭頭為深色（可改白色搭配暗背景） */
-  border-top: 20px solid transparent;
-  border-bottom: 20px solid transparent;
-  margin-left: 5px;
-}
-
-
-  </style>
+  #playButton::before {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-left: 30px solid black;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    margin-left: 4px; /* 輕微調整讓箭頭更居中視覺 */
+  }
+</style>
 </head>
 <body>
   <!-- 播放按鈕 -->
