@@ -51,23 +51,25 @@ body { margin: 0; overflow: hidden; }
   let isTargetVisible = false;
     // （可選）保留點擊切換播放／暫停功能
     videoPlane.addEventListener('click', () => {
+    if (!isTargetVisible) return; // 如果圖卡沒被掃到，禁止播放
+
     if (video.paused) {
-    video.play();
+      video.play().catch(e => console.warn("播放失敗", e));
     } else {
-    video.pause();
+      video.pause();
     }
-    });
+  });
     // 當偵測到 target 被找到時，自動播放影片
     targetEntity.addEventListener('targetFound', () => {
-    // console.log('Target Found，開始播放影片');
-    video.play();
-    });
+    isTargetVisible = true;
+  });
+
     // 當偵測到 target 遺失時，自動暫停並重置播放時間
     targetEntity.addEventListener('targetLost', () => {
-    // console.log('Target Lost，暫停並重置影片');
+    isTargetVisible = false;
     video.pause();
     video.currentTime = 0;
-    });
-    </script>
+  });
+</script>
     </body>
     </html>        
