@@ -14,7 +14,7 @@ body { margin: 0; overflow: hidden; }
 <body>
     <!-- A-Frame 場景設定 -->
     <a-scene
-    mindar-image="imageTargetSrc: targets.mind; controlsStart: true; uiScanning: true;"
+    mindar-image="imageTargetSrc: targets.mind;  uiScanning: true;"
     color-space="sRGB"
     renderer="colorManagement: true; physicallyCorrectLights: true"
     vr-mode-ui="enabled: false"
@@ -22,7 +22,8 @@ body { margin: 0; overflow: hidden; }
     >
     <!-- 載入影片資源（要與 HTML 放在同一目錄） -->
     <a-assets>
-    <video id="introVid" src="video.mp4" preload="controls" ></video>
+        <video controls width="640">
+    <video id="introVid" src="video.mp4" type="video/mp4"></video>
     </a-assets>
     <!-- 環境光線，避免影片太暗 -->
     <a-light type="ambient" intensity="1.5"></a-light>
