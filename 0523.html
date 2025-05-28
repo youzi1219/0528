@@ -11,23 +11,34 @@ aframe.prod.js"></script>
     body { margin: 0; overflow: hidden; }
 
     /* 改良版播放按鈕（圓形 + 播放圖形） */
-    #playButton {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 80px;
-      height: 80px;
-      background-color: rgba(0, 0, 0, 0.5);
-      border: 3px solid white;
-      border-radius: 50%;
-      cursor: pointer;
-      z-index: 10;
-      display: none;
+ #playButton {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 80px;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+  display: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-      /* 播放箭頭圖案 */
-      clip-path: polygon(35% 25%, 35% 75%, 75% 50%);
-    }
+#playButton::before {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-left: 20px solid white;
+  border-top: 14px solid transparent;
+  border-bottom: 14px solid transparent;
+}
+
   </style>
 </head>
 <body>
