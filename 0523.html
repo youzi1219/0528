@@ -11,14 +11,14 @@ aframe.prod.js"></script>
     body { margin: 0; overflow: hidden; }
 
     /* 改良版播放按鈕（圓形 + 播放圖形） */
- #playButton {
+#playButton {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 80px;
   height: 80px;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(255, 255, 255, 0.9); /* 白色背景，略透明 */
   border-radius: 50%;
   border: none;
   cursor: pointer;
@@ -34,10 +34,12 @@ aframe.prod.js"></script>
   display: block;
   width: 0;
   height: 0;
-  border-left: 20px solid white;
-  border-top: 14px solid transparent;
-  border-bottom: 14px solid transparent;
+  border-left: 30px solid rgba(0, 0, 0, 0.9); /* 播放箭頭為深色（可改白色搭配暗背景） */
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  margin-left: 5px;
 }
+
 
   </style>
 </head>
